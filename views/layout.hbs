@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Josco -Facility Management</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<head>
+  <title>Josco -Facility Management</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  {{#if admin}}
+    {{>admin-header}}
+  {{else}}
     {{{body}}}
-  </body>
+  {{/if}}
+</body>
 </html>
