@@ -1,3 +1,5 @@
+const servicesModel = require("../models/servicesModel");
+
 module.exports={
     getHome:(req,res)=>{
         try{
@@ -33,9 +35,10 @@ module.exports={
             console.log(err);q
         }
     },
-    getServices:(req,res)=>{
+    getServices:async(req,res)=>{
         try{
-            res.render('user/services')
+            const services = await servicesModel.find({}).lean()
+            res.render('user/services',{services})
         }catch(err){
             console.log(err)
         }

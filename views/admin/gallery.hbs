@@ -14,22 +14,24 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="text-end mt-2 mb-2">
-                                        <a href="/admin/add-service"><button class="btn btn-success">Add Service</button></a>
+                                        <a href="/admin/add-gallery"><button class="btn btn-success">Add to Gallery</button></a>
                                     </div>
                                     <table class="table mt-5" id="usersTable">
                                         <thead>
                                             <tr>
                                                 <th scope="col">No.</th>
-                                                <th scope="col">Service name</th>
+                                                <th scope="col">Heading</th>
+                                                <th scope="col">Sub Heading</th>
                                                 <th scope="col">Image</th>
                                                 <th scope="col"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{#each service}}
+                                            {{#each projects}}
                                             <tr>
                                                 <td></td>
-                                                <td>{{this.name}}</td>
+                                                <td>{{this.heading}}</td>
+                                                <td>{{this.suHeading}}</td>
                                                 <td><img src="/uploads/{{this.image}}"
                                                         style="height: 50px; width: 50px;" alt=""></td>
                                                 <td><a style="color: white; text-decoration: none;"
