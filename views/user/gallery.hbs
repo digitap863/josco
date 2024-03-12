@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <!-- portfolio filter start -->
-                <div class="col-xl-10">
+                {{!-- <div class="col-xl-10">
                     <div class="text-center">
                         <div class="portfolio-filter mb-70">     
                             <button class="active" data-filter="*">All Works</button>
@@ -41,137 +41,28 @@
                             <button data-filter=".cat5">Road Clean</button>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- portfolio filter end -->
             </div>
             <div id="portfolio-grid" class="row row-portfolio">
                 <div class="col-lg-4 col-md-6 grid-sizer"></div>
+                    {{#each gallery}}
                 <div class="col-lg-4 col-md-6 grid-item cat2 cat4">
+
                     <div class="portfolio-item mb-30">
                         <div class="portfolio-wrapper">
                             <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-1.jpeg" alt="" />
+                                <img src="/uploads/{{this.image}}" alt="" />
                             </div>
                             <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
+                                <p>{{this.subHeading}}</p>
+                                <h4>{{this.heading}}</h4>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 grid-item cat1 cat5">
-                    <div class="portfolio-item mb-30">
-                        <div class="portfolio-wrapper">
-                            <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-2.jpeg" alt="" />
-                            </div>
-                            <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grid-item cat2 cat3 cat1">
-                    <div class="portfolio-item mb-30">
-                        <div class="portfolio-wrapper">
-                            <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-3.jpeg" alt="" />
-                            </div>
-                            <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grid-item cat2 cat5">
-                    <div class="portfolio-item mb-30">
-                        <div class="portfolio-wrapper">
-                            <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-4.jpeg" alt="" />
-                            </div>
-                            <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grid-item cat3 cat1">
-                    <div class="portfolio-item mb-30">
-                        <div class="portfolio-wrapper">
-                            <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-5.jpeg" alt="" />
-                            </div>
-                            <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grid-item cat3 cat5">
-                    <div class="portfolio-item mb-30">
-                        <div class="portfolio-wrapper">
-                            <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-6.jpeg" alt="" />
-                            </div>
-                            <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grid-item cat1 cat3">
-                    <div class="portfolio-item mb-30">
-                        <div class="portfolio-wrapper">
-                            <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-7.jpeg" alt="" />
-                            </div>
-                            <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grid-item cat2 cat4">
-                    <div class="portfolio-item mb-30">
-                        <div class="portfolio-wrapper">
-                            <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-8.jpeg" alt="" />
-                            </div>
-                            <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grid-item cat1 cat3 cat5">
-                    <div class="portfolio-item mb-30">
-                        <div class="portfolio-wrapper">
-                            <div class="portfolio-image" data-overlay="9">
-                                <img src="assets/images/portfolio/portfolio-1-thumb-9.jpeg" alt="" />
-                            </div>
-                            <div class="portfolio-caption">
-                                <p>Cleaning, Family Care</p>
-                                <h4>Miranda Family Get
-                                Cleaning Service</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {{/each}}
+                
             </div>
         </div>
     </section>

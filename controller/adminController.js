@@ -1,3 +1,4 @@
+const galleryModel = require("../models/galleryModel");
 const ProjectsModel = require("../models/projectsModel");
 const servicesModel = require("../models/servicesModel");
 
@@ -45,7 +46,8 @@ module.exports = {
   },
   getAdminGallery: async (req, res) => {
     try {
-      res.render("admin/gallery", { admin: true });
+        const gallery = await galleryModel.find({}).lean()
+      res.render("admin/gallery", { admin: true,gallery});
     } catch (err) {
       consle.log(err);
     }
@@ -64,11 +66,26 @@ module.exports = {
       console.log(err);
     }
   },
-  addGalleryPost:async(req,res)=>{
-    try{
-        console.log(req.body)
-    }catch(err){
-        console.log(err)
+  addGalleryPost: async (req, res) => {
+    try {
+      const { heading, subHeading } = req.body;
+      const image = req.files[0].filename;
+      const newadd = new galleryModel({ heading, subHeading, image });
+      await newadd.save();
+      res.redirect("/admin/add-gallery");
+    } catch (err) {
+      console.log(err);
     }
-  }
+  },
+  addProjectPost: async (req, res) => {
+    try {
+      const { heading, subHeading } = req.body;
+      const image = req.files[0].filename;
+      const newProject = new ProjectsModel({ heading, subHeading, image });
+      await newProject.save();
+      res.redirect("/admin/add-project");
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
