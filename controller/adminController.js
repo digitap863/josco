@@ -46,8 +46,8 @@ module.exports = {
   },
   getAdminGallery: async (req, res) => {
     try {
-        const gallery = await galleryModel.find({}).lean()
-      res.render("admin/gallery", { admin: true,gallery});
+      const gallery = await galleryModel.find({}).lean();
+      res.render("admin/gallery", { admin: true, gallery });
     } catch (err) {
       consle.log(err);
     }
@@ -84,6 +84,33 @@ module.exports = {
       const newProject = new ProjectsModel({ heading, subHeading, image });
       await newProject.save();
       res.redirect("/admin/add-project");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  deleteService: async (req, res) => {
+    try {
+      let id = req.params.id;
+      const deleteService = await servicesModel.deleteOne({ _id: id });
+      res.redirect("/admin/service");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  deleteProject: async (req, res) => {
+    try {
+      let id = req.params.id;
+      const deleteService = await ProjectsModel.deleteOne({ _id: id });
+      res.redirect("/admin/project");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  deleteGallery: async (req, res) => {
+    try {
+      let id = req.params.id;
+      const deleteService = await galleryModel.deleteOne({ _id: id });
+      res.redirect("/admin/gallery");
     } catch (err) {
       console.log(err);
     }
